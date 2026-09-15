@@ -1,0 +1,213 @@
+/* styles.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Comic Sans MS', 'Trebuchet MS', 'Verdana', sans-serif;
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.app {
+  width: 100%;
+  max-width: 700px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.screen {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- PANTALLA DE INICIO ---------- */
+.floating-icons {
+  font-size: 48px;
+  animation: float 3s ease-in-out infinite;
+}
+
+h1 {
+  color: #4FB3E8;
+  font-size: 2.4rem;
+  text-shadow: 2px 2px 0px #E0F4FF;
+}
+
+.subtitle {
+  color: #6BAED6;
+  font-size: 1.3rem;
+}
+
+/* ---------- BOTONES ---------- */
+.big-btn {
+  background-color: #AEE1F9;
+  color: #2E6D8E;
+  border: none;
+  border-radius: 40px;
+  padding: 18px 36px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #7FC6EC;
+  transition: transform 0.1s ease;
+  font-family: inherit;
+}
+
+.big-btn:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 #7FC6EC;
+}
+
+.home-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #E0F4FF;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #AEE1F9;
+}
+
+/* ---------- PANTALLA DE JUEGO ---------- */
+#game-screen {
+  position: relative;
+  padding-top: 60px;
+}
+
+.question {
+  color: #4FB3E8;
+  font-size: 2rem;
+}
+
+.objects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  background-color: #F3FBFF;
+  border-radius: 24px;
+  padding: 24px;
+  width: 100%;
+  min-height: 120px;
+  border: 4px dashed #AEE1F9;
+}
+
+.objects-container span {
+  font-size: 3rem;
+  animation: pop 0.4s ease;
+}
+
+.numbers-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.number-btn {
+  background-color: #ffffff;
+  border: 4px solid #AEE1F9;
+  color: #4FB3E8;
+  border-radius: 18px;
+  width: 60px;
+  height: 60px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.number-btn:hover {
+  background-color: #E0F4FF;
+}
+
+.number-btn.selected {
+  background-color: #4FB3E8;
+  color: #ffffff;
+  border-color: #4FB3E8;
+  transform: scale(1.15);
+}
+
+.check-btn {
+  margin-top: 8px;
+}
+
+.feedback-msg {
+  font-size: 1.4rem;
+  font-weight: bold;
+  min-height: 30px;
+  color: #4FB3E8;
+}
+
+.feedback-msg.wrong {
+  color: #F4A6A6;
+}
+
+/* ---------- CELEBRACIÓN ---------- */
+.celebration {
+  position: relative;
+  min-height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.celebration-title {
+  font-size: 2.4rem;
+  z-index: 2;
+}
+
+.animals-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.animals-container span {
+  position: absolute;
+  font-size: 3rem;
+  animation: jump 1.4s ease-in-out infinite;
+}
+
+/* ---------- ANIMACIONES ---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pop {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+@keyframes jump {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-40px) rotate(10deg); }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.8rem; }
+  .objects-container span { font-size: 2.2rem; }
+  .number-btn { width: 50px; height: 50px; font-size: 1.3rem; }
+}
